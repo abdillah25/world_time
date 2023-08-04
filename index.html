@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>world time search engine</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  </head>
+  <body>
+    <section id="main-container" class="main-container">
+      <section id="particles-js" class="container-second">
+        <!-- start -->
+        <section id="container-third" class="container-third">
+          <!--  -->
+          <header id="main-header" class="main-header">
+            <h1>world time search <span>engine</span></h1>
+            <p>search time by <span id="element"></span></p>
+          </header>
+
+          <section id="container-search" class="container-search">
+            <section id="container-search-second" class="container-search-second">
+              <input type="text" class="input" id="clientSearch" placeholder="search here! e.g. 'tokyo'" />
+              <button id="search" class="search"><span class="material-icons">search</span></button>
+            </section>
+          </section>
+          <section id="local-time" class="local-time">
+            <header>
+              <h1>local time</h1>
+            </header>
+            <section id="local-time-main" class="local-time-main">
+              <ul>
+                <li id="clock" class="clock">
+                  <p>
+                    <span class="material-icons">calendar_month</span>
+                    <span id="day" class="day"></span>,
+                    <span id="date" class="date"></span>
+                    <span id="month" class="month"></span>
+                    <span id="year" class="year"></span>
+                  </p>
+                </li>
+                <li id="clock" class="clock">
+                  <p><span class="material-icons identity"></span> <span id="hour" class="hour"></span> : <span id="minute" class="minute"></span> : <span id="second" class="second"></span> GMT <span id="timeZoneNow" class="timeZoneNow"></span></p>
+                </li>
+              </ul>
+              <ul>
+                <li>
+                  <p>
+                    <span class="material-icons">location_on</span>
+                    <span id="ipLocation" class="ipLocation"></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span class="material-icons">public</span>
+
+                    <span id="city" class="city"></span>,
+                    <span id="regionName" class="regionName"></span>
+                    <span id="countryName" class="countryName"></span>
+                  </p>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section id="display-container" class="display-container">
+            <header class="header-display">
+              <h1>Result</h1>
+            </header>
+            <section class="result">
+              <h1 class="searchName"><span class="material-icons"> gps_fixed </span> <span id="searchName"></span></h1>
+              <p><span class="material-icons identitySearch">nights_stay</span> <span id="hourSearch" class="hourSearch"></span> : <span id="minuteSearch" class="minuteSearch"></span> : UTC <span id="timezoneSearch" class="timezoneSearch"></span></p>
+              <p>
+                <span class="material-icons">calendar_month</span>
+                <span id="dayResult" class="dayResult"></span>,
+                <span id="dateResult" class="dateResult"></span>
+              </p>
+              <button id="closeResult" class="closeResult">Delete</button>
+            </section>
+          </section>
+          <!--  -->
+        </section>
+        <!-- end -->
+      </section>
+    </section>
+    <!-- particle js -->
+    <script src="./node_modules/particles.js/particles.js"></script>
+    <script src="./node_modules/particles.js/app.js"></script>
+
+    <!-- typed js -->
+    <script src="./node_modules/typed.js/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["country", "regency", "city", "prefecture"],
+        typeSpeed: 100,
+        backSpeed: 50,
+        loop: true,
+      });
+    </script>
+    <!-- MY SCRIPT -->
+    <script src="./script/script.js"></script>
+  </body>
+</html>
