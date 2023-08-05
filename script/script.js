@@ -14,6 +14,7 @@ function getFullClientData(clientIp) {
       document.getElementById("city").textContent = data.city;
 
       document.getElementById("timeZoneNow").textContent = data.utc_offset;
+      document.getElementById("operatorCel").textContent = data.org;
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
