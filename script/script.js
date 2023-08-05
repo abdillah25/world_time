@@ -8,9 +8,12 @@ function getFullClientData(clientIp) {
   fetch(request)
     .then((response) => response.json())
     .then((data) => {
+      console.info(data);
       document.getElementById("regionName").textContent = data.region;
       document.getElementById("countryName").textContent = data.country_name;
       document.getElementById("city").textContent = data.city;
+
+      document.getElementById("timeZoneNow").textContent = data.utc_offset;
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
@@ -19,7 +22,7 @@ function getFullClientData(clientIp) {
 
 // get client data from ip address
 function getClientData() {
-  const request = new Request(`http://worldtimeapi.org/api/ip`, {
+  const request = new Request(`https://api.db-ip.com/v2/free/self`, {
     method: "GET",
     contentType: "application/json",
   });
@@ -29,11 +32,10 @@ function getClientData() {
   response
     .then((response) => response.json())
     .then((data) => {
-      const clientIp = data.client_ip;
+      const clientIp = data.ipAddress;
       getFullClientData(clientIp);
 
-      document.getElementById("ipLocation").textContent = data.client_ip;
-      document.getElementById("timeZoneNow").textContent = data.utc_offset;
+      document.getElementById("ipLocation").textContent = data.ipAddress;
     })
     .catch((error) => {
       console.error("Error fetching data:", error);
